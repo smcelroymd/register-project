@@ -22,37 +22,33 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<jjwt.version>0.6.0</jjwt.version>
 		<swagger.version>2.3.1</swagger.version>
+		<!-- Web Jars Versions -->
+		<bootstrap.version>3.3.7-1</bootstrap.version>
+		<ractive.version>0.7.3</ractive.version>
+		<requirejs.version>2.3.2</requirejs.version>
+		<jquery.version>3.1.1</jquery.version>
+		<crossroads.version>0.12.0-1</crossroads.version>
+		<js-signals.version>1.0.0</js-signals.version>
 	</properties>
 
 	<!-- ====================================================================================== -->
 
 	<dependencies>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-security</artifactId>
-		</dependency>
+		<!-- <dependency> <groupId>org.springframework.boot</groupId> <artifactId>spring-boot-starter-security</artifactId> 
+			</dependency> -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-thymeleaf</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		<dependency>
-			<groupId>org.apache.tomcat.embed</groupId>
-			<artifactId>tomcat-embed-jasper</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>javax.servlet-api</artifactId>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>javax.servlet</groupId>
-			<artifactId>jstl</artifactId>
-		</dependency>		
 		<dependency>
 			<groupId>io.jsonwebtoken</groupId>
 			<artifactId>jjwt</artifactId>
@@ -67,8 +63,55 @@
 			<groupId>io.springfox</groupId>
 			<artifactId>springfox-swagger-ui</artifactId>
 			<version>${swagger.version}</version>
-		</dependency>		
-		
+		</dependency>
+		<!-- Web Jars -->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>webjars-locator</artifactId>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.webjars/bootstrap -->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>bootstrap</artifactId>
+			<version>${bootstrap.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.webjars/ractive -->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>ractive</artifactId>
+			<version>${ractive.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.webjars/requirejs -->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>requirejs</artifactId>
+			<version>${requirejs.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.webjars/jquery -->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>jquery</artifactId>
+			<version>${jquery.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.webjars/crossroads.js -->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>crossroads.js</artifactId>
+			<version>${crossroads.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.webjars/js-signals -->
+		<dependency>
+			<groupId>org.webjars</groupId>
+			<artifactId>js-signals</artifactId>
+			<version>${js-signals.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.webjars/Hasher -->
+		<dependency>
+		    <groupId>org.webjars</groupId>
+		    <artifactId>Hasher</artifactId>
+		    <version>1.2.0</version>
+		</dependency>
+
 	</dependencies>
 
 	<!-- ====================================================================================== -->

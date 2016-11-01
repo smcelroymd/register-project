@@ -1,0 +1,189 @@
+@CHARSET "UTF-8";
+
+.hidden-data-panel, .successMsg {
+	display: none;
+}
+
+.navbar-brand {
+	padding: 10px 15px 15px 15px !important;
+}
+
+.logo {
+	height: 40px !important;
+	margin-top: 0 !important;
+	padding: 0 !important;
+}
+
+/**
+ * Navbar styling
+ */
+.navbar {
+	margin-bottom: 0;
+	border: 0;
+	border-radius: 0;
+	background-color: #000000;
+	font-family: Raleway, sans-serif !important;
+	font-size: 15p !important;
+	font-weight: normal !important;
+}
+
+.navbar-nav li a {
+	color: #dddddd !important;
+}
+
+.navbar-nav li.active a {
+	color: #0ca597 !important
+}
+
+/**
+ * Nav Tabs styling
+ */
+.nav-tabs>li.active>a {
+	color: #0ca597 !important
+}
+
+.nav-tabs>li>a {
+	color: #555 !important
+}
+
+.pre-election-tab-content {
+	margin: 20px 0 0 10px;
+}
+
+#home .well img {
+	background-color: black;
+}
+
+.glyphicon-ok {
+	font-size: 20px;
+	color: #0ca597;
+}
+
+.btn-md {
+	background-color: #0ca597;
+	border-color: #008678;
+}
+
+.btn-md:hover {
+	background-color: #0b8e83;
+}
+
+.badge {
+	background-color: #0ca597;
+}
+
+.label-success {
+	background-color: #0ca597;
+}
+
+.main-panel {
+	padding-top: 10px;
+	margin-left: 200px;
+}
+
+@media screen and (max-width: 768px) {
+	.main-panel {
+		margin-left: 0;
+		padding: 2px;
+		overflow-x: hidden;
+	}
+}
+
+.sidenav {
+	overflow: hidden;
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	background-color: #080808;
+	width: 200px;
+	padding-bottom: 3000px !important;
+}
+
+@media screen and (max-width: 768px) {
+	.sidenav {
+		padding-bottom: 0 !important;
+		width: 100% !important;
+		position: static !important;
+		/*This is important without this content is not pushed down when the side menu is collapsed*/
+	}
+}
+
+.nav-pills-as-tabs {
+	background-color: #FFFFFF !important;
+	border-style: solid !important;
+	border-width: 0 0 1px 0;
+	border-bottom-color: #0ca597 !important;
+	padding-bottom: 0 !important;
+	margin-bottom: 0 !important;
+}
+
+.nav-pills-as-tabs>li, .nav-pills-as-tabs>li a {
+	padding-bottom: 0 !important;
+	margin-bottom: 0 !important;
+	background-color: #FFFFFF !important;
+	color: #ababab !important;
+}
+
+.nav-pills-as-tabs li.active {
+	border-style: solid !important;
+	border-width: 0 0 2px 0 !important;
+	border-bottom-color: #0ca597 !important;
+}
+
+.nav-pills-as-tabs>li.active a {
+	color: #0ca597 !important;
+}
+
+.nav-pills-menu li a {
+	color: #dddddd !important;
+	padding-left: 20px;
+}
+
+.nav-pills-menu>li>a:focus, .nav-pills-menu>li>a:hover {
+	background-color: #080808 !important;
+}
+
+.nav-pills-menu>li.active>a, .nav-pills-menu>li.active>a:focus,
+	.nav-pills-menu>li.active>a:hover {
+	background-color: #080808 !important;
+}
+
+.nav-pills-menu>li.active>a {
+	color: #0ca597 !important;
+}
+
+.submenu-item a {
+	display: inline-block !important;
+	padding-left: 40px !important;
+	width: 100% !important;
+}
+
+.list-group-item:first-child {
+	border-top-right-radius: 0;
+	border-top-left-radius: 0;
+}
+
+.list-group-item:last-child {
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.panel, .well, .nav-pills>li>a {
+	border-radius: 0;
+}
+
+@media screen and (max-width: 768px) {
+	.sidenav {
+		z-index: 100;
+	}
+}
+
+@media screen {
+	.hide-on-mobile {		
+	}
+}
+
+
+.red {
+	color: red;	
+}
