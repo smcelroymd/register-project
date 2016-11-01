@@ -64,54 +64,6 @@
 			<artifactId>springfox-swagger-ui</artifactId>
 			<version>${swagger.version}</version>
 		</dependency>
-		<!-- Web Jars -->
-		<dependency>
-			<groupId>org.webjars</groupId>
-			<artifactId>webjars-locator</artifactId>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.webjars/bootstrap -->
-		<dependency>
-			<groupId>org.webjars</groupId>
-			<artifactId>bootstrap</artifactId>
-			<version>${bootstrap.version}</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.webjars/ractive -->
-		<dependency>
-			<groupId>org.webjars</groupId>
-			<artifactId>ractive</artifactId>
-			<version>${ractive.version}</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.webjars/requirejs -->
-		<dependency>
-			<groupId>org.webjars</groupId>
-			<artifactId>requirejs</artifactId>
-			<version>${requirejs.version}</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.webjars/jquery -->
-		<dependency>
-			<groupId>org.webjars</groupId>
-			<artifactId>jquery</artifactId>
-			<version>${jquery.version}</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.webjars/crossroads.js -->
-		<dependency>
-			<groupId>org.webjars</groupId>
-			<artifactId>crossroads.js</artifactId>
-			<version>${crossroads.version}</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.webjars/js-signals -->
-		<dependency>
-			<groupId>org.webjars</groupId>
-			<artifactId>js-signals</artifactId>
-			<version>${js-signals.version}</version>
-		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.webjars/Hasher -->
-		<dependency>
-		    <groupId>org.webjars</groupId>
-		    <artifactId>Hasher</artifactId>
-		    <version>1.2.0</version>
-		</dependency>
-
 	</dependencies>
 
 	<!-- ====================================================================================== -->
