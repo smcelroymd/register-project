@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @version $Id: $
  */
 @SpringBootApplication
-public class CountManagerApplication {
+public class RegisterManagerApplication {
 
     // ===========================================
     // Public Members
@@ -25,7 +25,7 @@ public class CountManagerApplication {
     // Constructors
     // ===========================================
 
-    public CountManagerApplication() {
+    public RegisterManagerApplication() {
         super();
     }
         
@@ -40,7 +40,7 @@ public class CountManagerApplication {
      * @throws Exception the exception
      */
     public static void main(String[] args) throws Exception {
-        SpringApplication.run(CountManagerApplication.class, args);
+        SpringApplication.run(RegisterManagerApplication.class, args);
     }
 
     // ===========================================
