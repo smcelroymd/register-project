@@ -1,7 +1,8 @@
 define(['jquery',
-		'bootstrap',
+	    'Cookies', 
 		'util/router',
-		'util/controller'], function ($) {
+		'util/controller',
+		'bootstrap'], function ($, Cookies, router) {
 	
 	(function initialise() {												
 		
@@ -18,7 +19,25 @@ define(['jquery',
 				$(this).addClass('active');
 			}
 		});
-
+		
+		/**
+		 * If a user refreshes the browser (presses F5) remember the current page
+		 * TODO - For security reason we need to mark this cookie as secure
+		 */
+		$( window ).on('beforeunload', function() {
+			Cookies.set('mdl-register-manager-current-page', router.getRoute());
+		});
+		
+		/**
+		 * If a user refreshed the browser (presses F5) show the correct page
+		 * TODO - For security reason we need to mark this cookie as secure
+		 */
+		var route = Cookies.get('mdl-register-manager-current-page');
+		if(route !== undefined) {
+			router.setRoute(route);
+			Cookies.remove('mdl-register-manager-current-page');
+		}
+		
 		console.log('Application Initialised');
 	})();
 	

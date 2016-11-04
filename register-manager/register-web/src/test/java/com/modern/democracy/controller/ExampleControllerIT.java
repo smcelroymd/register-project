@@ -1,7 +1,7 @@
 
 package com.modern.democracy.controller;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import java.util.Map;
 
@@ -13,13 +13,13 @@ import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 
-import com.modern.democracy.CountManagerApplication;
+import com.modern.democracy.RegisterManagerApplication;
 
 /**
  * @version $Id: $
  */
 @RunWith(SpringRunner.class)
-@SpringBootTest(webEnvironment=WebEnvironment.RANDOM_PORT, classes = CountManagerApplication.class)
+@SpringBootTest(webEnvironment=WebEnvironment.RANDOM_PORT, classes = RegisterManagerApplication.class)
 public class ExampleControllerIT {
 
     // ===========================================
