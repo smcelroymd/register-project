@@ -6,13 +6,13 @@
 
 	<parent>
 		<groupId>com.modern.democracy</groupId>
-		<artifactId>count-manager</artifactId>
+		<artifactId>register-app</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
 	</parent>
 
 	<!-- ====================================================================================== -->
 
-	<artifactId>cm-web</artifactId>
+	<artifactId>register-web</artifactId>
 	<name>Count Manager Web Application</name>
 	<description>Count Manager Web Application</description>
 

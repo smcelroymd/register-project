@@ -5,7 +5,7 @@
 	<!-- ====================================================================================== -->
 
 	<groupId>com.modern.democracy</groupId>
-	<artifactId>count-manager</artifactId>
+	<artifactId>register-app</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>Conter Manager</name>
@@ -24,7 +24,7 @@
 	<!-- ====================================================================================== -->
 
 	<modules>
-		<module>cm-web</module>
+		<module>register-web</module>
 	</modules>
 
 	<!-- ====================================================================================== -->
