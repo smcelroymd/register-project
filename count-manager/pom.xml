@@ -17,6 +17,8 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<java.version>1.8</java.version>
+		<guava.version>20.0</guava.version>
+		<spring-boot-dependencies.version>1.4.0.RELEASE</spring-boot-dependencies.version>
 	</properties>
 
 	<!-- ====================================================================================== -->
@@ -29,14 +31,20 @@
 
 	<dependencyManagement>
 		<dependencies>
+			<!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+			<dependency>
+				<groupId>com.google.guava</groupId>
+				<artifactId>guava</artifactId>
+				<version>${guava.version}</version>
+			</dependency>
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-dependencies</artifactId>
-				<version>1.4.0.RELEASE</version>
+				<version>${spring-boot-dependencies.version}</version>
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
-		</dependencies>	
+		</dependencies>
 	</dependencyManagement>
 
 	<!-- ====================================================================================== -->

@@ -7,7 +7,9 @@ require.config({
 		hasher : 'lib/hasher.min',
 		signals : 'lib/signals.min',
 		util : 'app/util',
-		view : 'app/view'
+		view : 'app/view',
+		command : 'app/command',
+		service : 'app/service'
 	},
 	shim: {
         bootstrap : {

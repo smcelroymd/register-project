@@ -44,6 +44,25 @@
 		<div id="main-panel-content"></div>
 	</div>
 	
+	<script th:inline="javascript">
+	
+		/*<![CDATA[*/	    	 
+		var APP_DATA = {
+			urls : {
+				baseUrl : /*[[@{/}]]*/ '/'
+			}
+		};
+ 		/*]]>*/
+	</script>	
+	
+<!-- 	<script type="text/javascript">
+	var APP_DATA = {
+        urls : {
+            baseUrl : '<a th:href="@{/}"/>'
+        }
+    };	
+	</script> 	
+ -->	
 	<script data-main="/js/config.js" src="/js/require.js"></script>
 	
 </body>

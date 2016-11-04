@@ -1,5 +1,6 @@
 define([], function(){
 
+	var self = this;
 	var ractive = null;
 	
    	function setRactive(ractive) {
@@ -10,9 +11,20 @@ define([], function(){
    		return self.ractive;
    	} 
 	
-	return {			
-		setRactive : setRactive,
-		getRactive : getRactive
+   	function set(keypath, value) {
+   		self.ractive.set(keypath, value);
+   	}
+   	
+	return {
+		'data' : {
+			'message' : ''
+		},
+		'urls' : {
+    		exampleControllerURL : APP_DATA.urls.baseUrl + 'test',
+		},
+		'setRactive' : setRactive,
+		'getRactive' : getRactive,
+		'set' : set
 	};
 	
 });

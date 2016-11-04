@@ -10,7 +10,7 @@ define(['Ractive',
 		model.setRactive(new Ractive({
 			el : '#main-panel-content',
 			template : view,
-			data : model
+			data : model.data
 		}));
 	}
 	

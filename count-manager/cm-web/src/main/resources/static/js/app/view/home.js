@@ -1,11 +1,24 @@
 define(['text!view/home.html',
-		'util/viewResolver'], function (view, viewResolver) {
+		'util/viewResolver',
+		'util/eventHandler'], function (view, viewResolver, eventHandler) {
 	
-	function show() {
-		viewResolver.show(view);			
+	function initialise() {
+		/**
+		 * Show the view
+		 */
+		viewResolver.show(view);	
+		
+		/**
+		 * Add functionality
+		 */
+		$('#exampleBtn').off('click').on('click', function() {
+			eventHandler.trigger({
+				'type' : 'exampleEvent'
+			});
+		});
 	}
 	
 	return {
-		show : show
+		show : initialise
 	};
 });

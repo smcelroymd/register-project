@@ -1,6 +1,7 @@
 define(['jquery',
 		'bootstrap',
-		'util/router'], function ($) {
+		'util/router',
+		'util/controller'], function ($) {
 	
 	(function initialise() {												
 		
