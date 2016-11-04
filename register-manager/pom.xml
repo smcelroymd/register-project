@@ -5,10 +5,10 @@
 	<!-- ====================================================================================== -->
 
 	<groupId>com.modern.democracy</groupId>
-	<artifactId>register-app</artifactId>
+	<artifactId>register-manager</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	<name>Conter Manager</name>
+	<name>Register Manager</name>
 	<description>Modern Democracy Conter Manager Parent Project</description>
 
 	<!-- ====================================================================================== -->
