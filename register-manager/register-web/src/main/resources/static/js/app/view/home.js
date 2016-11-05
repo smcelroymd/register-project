@@ -3,21 +3,24 @@ define(['text!view/home.html',
 		'util/eventHandler'], function (view, viewResolver, eventHandler) {
 	
 	function initialise() {
+		
+		function onComplete() {
+			/**
+			 * Add functionality
+			 */
+			$('#exampleBtn').off('click').on('click', function() {
+				eventHandler.trigger({
+					'type' : 'exampleEvent'
+				});
+			});			
+		}
+		
 		/**
 		 * Show the view
 		 */
-		viewResolver.show(view);	
-		
-		/**
-		 * Add functionality
-		 */
-		$('#exampleBtn').off('click').on('click', function() {
-			eventHandler.trigger({
-				'type' : 'exampleEvent'
-			});
-		});
+		viewResolver.show(view, onComplete);	
 	}
-	
+		
 	return {
 		show : initialise
 	};

@@ -3,11 +3,9 @@ define(['jquery',
 		'hasher',
 		'crossroads',
 		'view/home',
-		'view/view1',
-		'view/view2',
-		'view/submenuviews/subMenuItem1',
-		'view/submenuviews/subMenuItem2',
-		'view/submenuviews/subMenuItem3',], function ($, signals, hasher, crossroads, home, view1, view2, subMenuItem1, subMenuItem2, subMenuItem3) {
+		'view/markedRegister',
+		'view/fullRegister',
+		'view/cnl'], function ($, signals, hasher, crossroads, home, markedRegister, fullRegister, cnl) {
 	
 	
 	/**
@@ -42,31 +40,23 @@ define(['jquery',
 			home.show();
 		});
 		
-		crossroads.addRoute('/view1', function() {
-			view1.show();
+		crossroads.addRoute('/markedRegister', function() {
+			markedRegister.show();
 		});
 	
-		crossroads.addRoute('/view2', function() {
-			view2.show();
+		crossroads.addRoute('/fullRegister', function() {
+			fullRegister.show();
 		});
 		
-		crossroads.addRoute('/submenuviews/subMenuItem1', function() {
-			subMenuItem1.show();
-		});
-
-		crossroads.addRoute('/submenuviews/subMenuItem2', function() {
-			subMenuItem2.show();
-		});
-
-		crossroads.addRoute('/submenuviews/subMenuItem3', function() {
-			subMenuItem3.show();
+		crossroads.addRoute('/cnl', function() {
+			cnl.show();
 		});
 
 		/**
 		 * Define what happens when a link is clicked
 		 */
 		$("a").click(function(e) {
-			e.preventDefault();;
+			e.preventDefault();
 	        hasher.setHash($(this).attr('href'));
 		});
 		
