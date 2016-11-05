@@ -1,7 +1,7 @@
 define(['Ractive',
 	    'app/model'], function (Ractive, model) {
 	
-	function show(view, oncomplete) {
+	function show(view, onComplete) {
 		
 		if (model.getRactive() != null) {
 			model.getRactive().teardown();
@@ -10,7 +10,7 @@ define(['Ractive',
 		model.setRactive(new Ractive({
 			el : '#main-panel-content',
 			template : view,
-			complete : oncomplete,
+			oncomplete : onComplete,
 			data : model.data
 		}));
 	}

@@ -1,11 +1,20 @@
 define(['text!view/cnl.html',
-		'util/viewResolver'], function (view, viewResolver) {
+		'util/viewResolver',
+		'bootstrap',
+		'datatables.net',
+		'datatables.net-bs',
+		'datatables.net-responsive',
+		'datatables.net-responsive-bs'], function (view, viewResolver) {
 	
-	function show() {
-		viewResolver.show(view);			
+	function onComplete() {
+		 $('#cnlTbl').DataTable();
+	}
+
+	function initialise() {
+		viewResolver.show(view, onComplete);			
 	}
 	
 	return {
-		show : show
+		show : initialise
 	};
 });

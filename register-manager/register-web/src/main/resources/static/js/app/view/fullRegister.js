@@ -1,8 +1,17 @@
 define(['text!view/fullRegister.html',
-		'util/viewResolver'], function (view, viewResolver) {
+		'util/viewResolver',
+		'bootstrap',
+		'datatables.net',
+		'datatables.net-bs',
+		'datatables.net-responsive',
+		'datatables.net-responsive-bs'], function (view, viewResolver) {
+	
+	function onComplete() {
+		 $('#fullRegisterTbl').DataTable();
+	}
 	
 	function show() {
-		viewResolver.show(view);			
+		viewResolver.show(view, onComplete);			
 	}
 	
 	return {

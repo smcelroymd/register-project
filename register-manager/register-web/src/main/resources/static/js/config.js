@@ -1,19 +1,23 @@
 require.config({
 	paths: {
-		jquery : 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min',
-		bootstrap : 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min',
-		Ractive: 'http://cdn.ractivejs.org/latest/ractive',
-		crossroads : 'lib/crossroads.min',
-		hasher : 'lib/hasher.min',
-		signals : 'lib/signals.min',
-		Cookies : 'lib/js.cookie',
-		util : 'app/util',
-		view : 'app/view',
-		command : 'app/command',
-		service : 'app/service'
+		'jquery' : 'https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min',
+		'bootstrap' : 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min',
+		'Ractive' : 'http://cdn.ractivejs.org/latest/ractive',
+		'crossroads' : 'lib/crossroads.min',
+		'hasher' : 'lib/hasher.min',
+		'signals' : 'lib/signals.min',
+		'Cookies' : 'lib/js.cookie',
+		'util' : 'app/util',
+		'view' : 'app/view',
+		'command' : 'app/command',
+		'service' : 'app/service',
+		'datatables.net' : 'https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min',
+		'datatables.net-bs' : 'https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min',		
+		'datatables.net-responsive' : 'https://cdn.datatables.net/responsive/2.1.0/js/dataTables.responsive.min',
+		'datatables.net-responsive-bs' : 'https://cdn.datatables.net/responsive/2.1.0/js/responsive.bootstrap.min'
 	},
 	shim: {
-        bootstrap : {
+        'bootstrap' : {
             deps : [ 'jquery'],
             exports: 'Bootstrap'
         }
