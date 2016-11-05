@@ -17,7 +17,21 @@ define([], function(){
    	
 	return {
 		'data' : {
-			'message' : ''
+			'message' : '',
+			'cnl' : {
+				'data' : [
+					{
+						'ballotNumber'  : '1234',
+						'electorNumber' : '4321'
+					},
+					{
+						'ballotNumber'  : '5673',
+						'electorNumber' : '3765'
+					}
+				],
+				'ballotNumber' : '',
+				'electorNumber' : ''
+			}
 		},
 		'urls' : {
     		exampleControllerURL : APP_DATA.urls.baseUrl + 'test',

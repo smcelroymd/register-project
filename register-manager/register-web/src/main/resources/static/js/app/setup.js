@@ -21,6 +21,15 @@ define(['jquery',
 		});
 		
 		/**
+		 * Collapse the menu if shown and a link is clicked
+		 */
+//		$(".nav-pills-menu li a").click(function(event) {
+//			if($(this).attr('href') !== '#') {
+//				$(".navbar-collapse").collapse('hide');
+//			}
+//		});
+		
+		/**
 		 * If a user refreshes the browser (presses F5) remember the current page
 		 * TODO - For security reason we need to mark this cookie as secure
 		 */
