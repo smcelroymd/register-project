@@ -1,28 +1,30 @@
 define(['text!view/cnl.html',
 		'util/viewResolver',
 		'app/model',
+		'util/eventHandler',
 		'bootstrap',		
 		'datatables.net',
 		'datatables.net-bs',
 		'datatables.net-responsive',
-		'datatables.net-responsive-bs'], function (view, viewResolver, model) {
+		'datatables.net-responsive-bs'], function (view, viewResolver, model, eventHandler) {
 	
 	function onComplete() {
-		 var table = $('#cnlTbl').DataTable({
-			 data : model.data.cnl.data,
+		var table = $('#cnlTbl').DataTable({
+			 data : model.get('cnl.data'),
 			 columns : [
 				 {data : 'ballotNumber'},
 				 {data : 'electorNumber'}
 			 ]
 		 });
 		 
-		 $('#addCnlBtn').off('click').on('click', function() {
-			 model.data.cnl.data.push({'ballotNumber' : model.data.cnl.ballotNumber,'electorNumber' : model.data.cnl.electorNumber});		 
+		 model.getRactive().observe('cnl.data', function(newValue, oldValue, keypath) {
 			 table.clear();
-			 table.rows.add(model.data.cnl.data);
+			 table.rows.add(newValue);
 			 table.draw();
-			 model.set('cnl.ballotNumber','');
-			 model.set('cnl.electorNumber','');
+		 }, {'init':false});
+		 
+		 $('#addCnlBtn').off('click').on('click', function() {			 
+			 eventHandler.trigger({'type' : 'addCnlEntryEvent'});
 			 $('#ballotNumber').focus();
 		 });
 	}

@@ -14,7 +14,11 @@ define([], function(){
    	function set(keypath, value) {
    		self.ractive.set(keypath, value);
    	}
-   	
+
+   	function get(keypath) {
+   		return self.ractive.get(keypath);
+   	}
+
 	return {
 		'data' : {
 			'message' : '',
@@ -38,7 +42,8 @@ define([], function(){
 		},
 		'setRactive' : setRactive,
 		'getRactive' : getRactive,
-		'set' : set
+		'set' : set,
+		'get' : get
 	};
 	
 });
