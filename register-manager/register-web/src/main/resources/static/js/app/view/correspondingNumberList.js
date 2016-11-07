@@ -1,4 +1,4 @@
-define(['text!view/cnl.html',
+define(['text!view/correspondingNumberList.html',
 		'util/viewResolver',
 		'app/model',
 		'util/eventHandler',

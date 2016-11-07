@@ -1,6 +1,7 @@
 define(['jquery',
 	    'util/eventHandler',
-        'command/addCnlEntryCommand'], function($, eventHandler, addCnlEntryCommand) {	
+        'command/addCnlEntryCommand',
+        'command/exampleCommand'], function($, eventHandler, addCnlEntryCommand, exampleCommand) {	
 			(function initialise() {
 				eventHandler.bind('exampleEvent', function() {
 					exampleCommand.execute().fail(function(jqXHR, textStatus, errorThrown) {

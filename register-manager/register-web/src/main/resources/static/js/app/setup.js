@@ -23,11 +23,11 @@ define(['jquery',
 		/**
 		 * Collapse the menu if shown and a link is clicked
 		 */
-//		$(".nav-pills-menu li a").click(function(event) {
-//			if($(this).attr('href') !== '#') {
-//				$(".navbar-collapse").collapse('hide');
-//			}
-//		});
+		$(".nav-pills-menu li a").click(function(event) {
+			if($(this).attr('href') !== '#') {
+				$(".navbar-collapse").collapse('hide');
+			}
+		});
 		
 		/**
 		 * If a user refreshes the browser (presses F5) remember the current page
@@ -45,6 +45,12 @@ define(['jquery',
 		if(route !== undefined) {
 			router.setRoute(route);
 			Cookies.remove('mdl-register-manager-current-page');
+			
+			/**
+			 * Highlight the correct menu option 
+			 */
+			$('.sidenav ul.nav-pills li.active').removeClass('active');
+			$('a[href^="' + route + '"').parent().addClass('active');
 		}
 		
 		console.log('Application Initialised');

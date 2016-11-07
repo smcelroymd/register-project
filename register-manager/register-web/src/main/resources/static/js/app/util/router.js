@@ -5,7 +5,7 @@ define(['jquery',
 		'view/home',
 		'view/markedRegister',
 		'view/fullRegister',
-		'view/cnl'], function ($, signals, hasher, crossroads, home, markedRegister, fullRegister, cnl) {
+		'view/correspondingNumberList'], function ($, signals, hasher, crossroads, home, markedRegister, fullRegister, correspondingNumberList) {
 	
 	
 	/**
@@ -48,8 +48,8 @@ define(['jquery',
 			fullRegister.show();
 		});
 		
-		crossroads.addRoute('/cnl', function() {
-			cnl.show();
+		crossroads.addRoute('/correspondingNumberList', function() {
+			correspondingNumberList.show();
 		});
 
 		/**
