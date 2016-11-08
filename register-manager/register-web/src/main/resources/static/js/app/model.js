@@ -23,18 +23,10 @@ define([], function(){
 		'data' : {
 			'message' : '',
 			'cnl' : {
-				'data' : [
-					{
-						'ballotNumber'  : '1234',
-						'electorNumber' : '4321'
-					},
-					{
-						'ballotNumber'  : '5673',
-						'electorNumber' : '3765'
-					}
+				'data' : [					
 				],
 				'ballotNumber' : '',
-				'electorNumber' : ''
+				'electorNumber' : '',
 			}
 		},
 		'urls' : {
