@@ -25,8 +25,7 @@ define([], function(){
 			'cnl' : {
 				'data' : [					
 				],
-				'ballotNumber' : '',
-				'electorNumber' : '',
+				'ballotPaper' : 1234
 			}
 		},
 		'urls' : {
