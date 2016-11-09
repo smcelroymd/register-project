@@ -47,45 +47,44 @@ define(['jquery',
 
 	
 	function editAction(event, datatable, buttonClicked, buttonConfig ) {
-		var cnlObjec = $.extend({
+		var model = $.extend({
 			'update' : true
 		}, datatable.row( { selected: true } ).data());		
-		showCorrespondingNumberDialog(cnlObjec)
+		showCorrespondingNumberDialog(model)
 	}
 	
 	function newAction(event, datatable, buttonClicked, buttonConfig ) {
-		var cnlObject = {'update' : false, 'ballotNumber' : getNextBallotNumber(), 'electorNumber' : ''};
-		showCorrespondingNumberDialog(cnlObject)		
+		var model = {'update' : false, 'ballotNumber' : getNextBallotNumber(), 'electorNumber' : ''};
+		showCorrespondingNumberDialog(model)		
 	}
 	
 	function getNextBallotNumber() {
-		var lastBallotNumber = 0;
-		var cnlEntries = model.get('cnl.data');
-		if(cnlEntries.length > 0) {
-			lastBallotNumber = cnlEntries[cnlEntries.length-1].ballotNumber;
-		}		
-		return (lastBallotNumber > 0 ? ++lastBallotNumber : '');
+		/**
+		 * cnl.lastBallotPaperNumber is updatd by addCnlEntryCommand
+		 */
+		var lastBallotNumber = model.get('cnl.lastBallotPaperNumber');	
+		return (lastBallotNumber === '' ? lastBallotNumber : ++lastBallotNumber);
 	}
 	
 	/**
 	 * Show dialog
 	 */
-	function showCorrespondingNumberDialog(cnlObject) {		 
+	function showCorrespondingNumberDialog(model) {		 
 		 /**
 		  * Create the view 
 		  */
-		var dialog = viewResolver.createDialog("#correspondingNumberListDialogContainer", correspondingNumberListDialog, cnlObject, function onComplete() {
+		var dialog = viewResolver.createDialog("#correspondingNumberListDialogContainer", correspondingNumberListDialog, model, function onComplete() {
 			 
 			 /**
 			  * Register button listeners
 			  */
-			 $('#saveBtn').off('click').on('click', function() {
-				 eventHandler.trigger({'type' : 'updateCnlEntryEvent', 'cnlObject' : cnlObject});
+			 $('#cnlSaveBtn').off('click').on('click', function() {
+				 eventHandler.trigger({'type' : 'updateCnlEntryEvent', 'cnlObject' : model});
 			 });
 			 
-			 $('#addBtn, #addAndCloseBtn').off('click').on('click', function (e) {
-				 eventHandler.trigger({'type' : 'addCnlEntryEvent', 'cnlObject' : cnlObject});	
-				 dialog.set('ballotNumber', ++cnlObject.ballotNumber);	
+			 $('#cnlAddBtn, #cnlAddAndCloseBtn').off('click').on('click', function (e) {
+				 eventHandler.trigger({'type' : 'addCnlEntryEvent', 'cnlObject' : model});	
+				 dialog.set('ballotNumber', getNextBallotNumber());	
 				 dialog.set('electorNumber', '');	
 				 $('#electorNumber').focus();
 			 });

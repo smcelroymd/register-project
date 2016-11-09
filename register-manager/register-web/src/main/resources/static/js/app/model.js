@@ -25,7 +25,7 @@ define([], function(){
 			'cnl' : {
 				'data' : [					
 				],
-				'ballotPaper' : 1234
+				'lastBallotPaperNumber' : ''
 			}
 		},
 		'urls' : {
