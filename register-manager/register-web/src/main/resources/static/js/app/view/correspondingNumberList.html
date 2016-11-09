@@ -1,21 +1,5 @@
 <div id="template">
 	<h2>Corresponding Number List</h2>
-
-	<div class="panel panel-default">
-		<div class="panel-body">		
-			<form class="form-inline">
-				<div class="form-group form-group-sm">
-					<label for="ballotNumber">Ballot Paper Number:</label>
-					<input id="ballotNumber" value='{{cnl.ballotNumber}}' placeholder="Ballot Paper Number" class="form-control" >
-				</div>
-				<div class="form-group form-group-sm">
-					<label for="electorNumber">Elector Number:</label>
-					<input id="electorNumber" value='{{cnl.electorNumber}}' placeholder="Elector Number" class="form-control" >
-				</div>
-				<button id="addCnlBtn" type="submit" class="btn btn-sm">Add</button>
-			</form>
-		</div>				
-	</div>
 	
 	<div class="panel panel-default">
 		<div class="panel-body">
@@ -31,4 +15,34 @@
 			</table>
 		</div>
 	</div>
+	
+	<!-- Modal -->
+	<div class="modal fade" id="newEntryModal" role="dialog">
+		<div class="modal-dialog">    
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Corresponding Number List Entry</h4>
+		        </div>
+		        <div class="modal-body">
+					<form>
+						<div class="form-group form-group-sm">
+							<label for="ballotNumber">Ballot Paper Number:</label>
+							<input id="ballotNumber" value='{{cnl.ballotNumber}}' placeholder="Ballot Paper Number" class="form-control" >
+						</div>
+						<div class="form-group form-group-sm">
+							<label for="electorNumber">Elector Number:</label>
+							<input id="electorNumber" value='{{cnl.electorNumber}}' placeholder="Elector Number" class="form-control" >
+						</div>
+					</form>        
+				</div>
+		        <div class="modal-footer">
+					<button id="addBtn" type="submit" class="btn btn-default">Add</button>
+					<button id="addAndCloseBtn" type="submit" class="btn btn-default" data-dismiss="modal">Add and Close</button>
+					<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		        </div>
+			</div>      
+		</div>
+	</div>	
 </div>

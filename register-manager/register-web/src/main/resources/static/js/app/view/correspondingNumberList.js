@@ -16,35 +16,47 @@ define(['jquery',
 		var table = $('#cnlTbl').DataTable({
 			 lengthChange: false,
 			 data : model.get('cnl.data'),	
-			 select : true,
+			 select: {
+				 style: 'multi'
+			 },
 			 buttons: [
-			        {
-			            text: 'New',
-			            action: function ( e, dt, node, config ) {
-			            	alert('new');
-			            }
-			        },
-			        {
-			            text: 'Edit',
-			            action: function ( e, dt, node, config ) {
-			            	alert('edit');
-			            }
-			        },
-			        {
-			            text: 'Delete',
-			            action: function ( e, dt, node, config ) {
-			            	alert('delete');
-			            }
-			        }
-			    ],			 
-			 columnDefs : [
+				 {
+					extend : 'selectAll',
+					text : 'Select All'			
+				 },
+				 {
+					 extend : 'selectNone',
+					 text : 'Select None',
+					 enabled : true
+				 },
+				 {
+					 text: 'New',
+					 action: function ( e, dt, node, config ) {
+						 $("#newEntryModal").modal()
+					 }
+				 },
+				 {
+					 text: 'Edit',
+					 action: function ( e, dt, node, config ) {
+						 alert('edit');
+					 }
+				 },
+				 {
+					 text: 'Delete',
+					 action: function ( e, dt, node, config ) {
+						 alert('delete');
+					 }
+				 }],			 
+				 columnDefs : [
 				 {
 					 'targets' : 0,
-					 'data' : 'ballotNumber'						 
+					 'data' : 'ballotNumber',
+					 'width' : "50%"
 				 },
 				 {
 					 'targets' : 1,
-					 'data' : 'electorNumber'
+					 'data' : 'electorNumber',
+					 'width' : "50%"
 				 }
 			 ]
 		 });
@@ -57,53 +69,11 @@ define(['jquery',
 			 table.rows().invalidate().draw();
 		 }, {'init':false});
 		 
-		 $('#addCnlBtn').off('click').on('click', function() {			 
+		 $('#newEntryModal').off('click').on('click','#addBtn, #addAndCloseBtn', function (e) {
 			 eventHandler.trigger({'type' : 'addCnlEntryEvent'});
 			 $('#electorNumber').focus();
 		 });
 	}
-
-	//Example using select boxes
-//	function onComplete() {
-//		var table = $('#cnlTbl').DataTable({
-//			 data : model.get('cnl.data'),			 
-//			 columnDefs : [
-//				 {
-//		            'orderable': false,
-//		            'className': 'select-checkbox',
-//		            'targets':   0,
-//		            'defaultContent': "",
-//		            "width": "10px"
-//				 },
-//				 {
-//					 'targets' : 1,
-//					 'data' : 'ballotNumber'						 
-//				 },
-//				 {
-//					 'targets' : 2,
-//					 'data' : 'electorNumber'
-//				 }
-//			 ],
-//			 select: {
-//				 style:    'os',
-//		         selector: 'td:first-child'
-//			 },
-//		     order: [[ 1, 'asc' ]]
-//		 });
-//		 
-//		 model.getRactive().observe('cnl.data', function(newValue, oldValue, keypath) {
-//			 table.clear();
-//			 table.rows.add(newValue);
-//			 table.rows().invalidate().draw();
-//			 //table.draw();
-//		 }, {'init':false});
-//		 
-//		 $('#addCnlBtn').off('click').on('click', function() {			 
-//			 eventHandler.trigger({'type' : 'addCnlEntryEvent'});
-//			 $('#electorNumber').focus();
-//		 });
-//	}
-//	
 	
 	function initialise() {
 		viewResolver.show(view, onComplete);			
