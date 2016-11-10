@@ -47,10 +47,9 @@ define(['jquery',
 
 	
 	function editAction(event, datatable, buttonClicked, buttonConfig ) {
-		var model = $.extend({
-			'update' : true
-		}, datatable.row( { selected: true } ).data());		
-		showCorrespondingNumberDialog(model)
+		var model = datatable.row( { selected: true } ).data();
+		model["update"] = true;
+		showCorrespondingNumberDialog(model);
 	}
 	
 	function newAction(event, datatable, buttonClicked, buttonConfig ) {
@@ -79,11 +78,11 @@ define(['jquery',
 			  * Register button listeners
 			  */
 			 $('#cnlSaveBtn').off('click').on('click', function() {
-				 eventHandler.trigger({'type' : 'updateCnlEntryEvent', 'cnlObject' : dialogModel});
+				 eventHandler.trigger({'type' : 'updateCnlEntryEvent', 'eventData' : dialogModel});
 			 });
 			 
 			 $('#cnlAddBtn, #cnlAddAndCloseBtn').off('click').on('click', function (e) {
-				 eventHandler.trigger({'type' : 'addCnlEntryEvent', 'cnlObject' : dialogModel});	
+				 eventHandler.trigger({'type' : 'addCnlEntryEvent', 'eventData' : dialogModel});	
 				 dialog.set('ballotNumber', getNextBallotNumber());	
 				 dialog.set('electorNumber', '');	
 				 $('#electorNumber').focus();
@@ -101,16 +100,11 @@ define(['jquery',
 			  */				 
 			 $("#correspondingNumberListDialog").modal();									 
 		 });	
-//		
-//		 model.getRactive().observe('cnl.lastBallotPaperNumber', function(newValue, oldValue, keypath) {
-//			 dialog.set('ballotNumber', getNextBallotNumber());	
-//			 dialog.set('electorNumber', '');	
-//		 }, {'init':false});
 	}
 		
 	function deleteAction(event, datatable, buttonClicked, buttonConfig ) {
 		var objectsToDelete = datatable.rows( { selected: true } ).data();
-		eventHandler.trigger({'type' : 'deleteCnlEntriesEvent', 'objectsToDelete' : objectsToDelete});
+		eventHandler.trigger({'type' : 'deleteCnlEntriesEvent', 'eventData' : objectsToDelete});
 	}
 	
 	/**
