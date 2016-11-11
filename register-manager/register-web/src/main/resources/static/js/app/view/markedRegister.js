@@ -27,10 +27,10 @@ define(['jquery',
 			columnDefs : [
 				{'targets' : 0, 'data' : 'name','width' : "20%"},
 				{'targets' : 1, 'data' : 'address','width' : "60%"},
-				{'targets' : 2, 'data' : 'electorNumber','width' : "10%"},
-				{'targets' : 3, 'data' : 'ballotNumber','width' : "10%",
+				{'targets' : 2, 'data' : 'electorNumber','width' : "15%"},
+				{'targets' : 3, 'data' : 'ballotNumber','width' : "5%", 'className': "text-center",
 					"render" : function ( data, type, full, meta ) {
-						return (data == null ? "Unassigned" : data);
+						return (data == null ? "<span class='glyphicon glyphicon-remove'/>" : "<span class='glyphicon glyphicon-ok'/>");
 					}
 				}
 			]
