@@ -3,7 +3,15 @@ define(['jquery',
         'command/updateCnlEntryCommand',
         'command/addCnlEntryCommand',
         'command/deleteCnlEntriesCommand',
-        'command/exampleCommand'], function($, eventHandler, updateCnlEntryCommand, addCnlEntryCommand, deleteCnlEntriesCommand, exampleCommand) {	
+        'command/issueBallotPaperCommand',
+        'command/updateFullRegistryEntryCommand',
+        'command/exampleCommand'], function($, eventHandler, 
+        		                               updateCnlEntryCommand, 
+        		                               addCnlEntryCommand, 
+        		                               deleteCnlEntriesCommand, 
+        		                               issueBallotPaperCommand,
+        		                               updateFullRegistryEntryCommand,
+        		                               exampleCommand) {	
 			(function initialise() {
 				eventHandler.bind('exampleEvent', function() {
 					exampleCommand.execute().fail(function(jqXHR, textStatus, errorThrown) {
@@ -23,6 +31,14 @@ define(['jquery',
 				eventHandler.bind('deleteCnlEntriesEvent', function(event) {
 					deleteCnlEntriesCommand.execute(event);
 				});
+				
+				eventHandler.bind('issueBallotPaperEvent', function(event) {
+					issueBallotPaperCommand.execute(event);
+				})
+
+				eventHandler.bind('updateFullRegistryEntry', function(event) {
+					updateFullRegistryEntryCommand.execute(event);
+				})
 			})(); 
 		}
 );

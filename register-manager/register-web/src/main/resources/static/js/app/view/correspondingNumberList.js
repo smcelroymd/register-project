@@ -48,8 +48,10 @@ define(['jquery',
 	
 	function editAction(event, datatable, buttonClicked, buttonConfig ) {
 		var model = datatable.row( { selected: true } ).data();
-		model["update"] = true;
-		showCorrespondingNumberDialog(model);
+		if(model !== undefined) {
+			model["update"] = true;
+			showCorrespondingNumberDialog(model);			
+		}
 	}
 	
 	function newAction(event, datatable, buttonClicked, buttonConfig ) {

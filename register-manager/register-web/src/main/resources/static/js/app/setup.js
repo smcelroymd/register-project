@@ -53,6 +53,7 @@ define(['jquery',
 			$('.sidenav ul.nav-pills li.active').removeClass('active');
 			$('a[href^="' + route + '"').parent().addClass('active');
 		}
+			
 		
 		console.log('Application Initialised');
 	})();
