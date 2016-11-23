@@ -14,6 +14,10 @@
 	padding: 0 !important;
 }
 
+.logo-medium {
+    font-size: 30px;
+}
+
 /**
  * Navbar styling
  */
