@@ -36,19 +36,19 @@ define(['jquery',
 	 */
 	(function initialise() {
 	
-		crossroads.addRoute('/home', function() {
+		crossroads.addRoute('home', function() {
 			home.show();
 		});
 		
-		crossroads.addRoute('/markedRegister', function() {
+		crossroads.addRoute('markedRegister', function() {
 			markedRegister.show();
 		});
 	
-		crossroads.addRoute('/fullRegister', function() {
+		crossroads.addRoute('fullRegister', function() {
 			fullRegister.show();
 		});
 		
-		crossroads.addRoute('/correspondingNumberList', function() {
+		crossroads.addRoute('correspondingNumberList', function() {
 			correspondingNumberList.show();
 		});
 
@@ -71,7 +71,7 @@ define(['jquery',
 		/**
 		 * update URL fragment generating new history record
 		 */
-		hasher.setHash('/home');
+		hasher.setHash('markedRegister');
 	})();
 	
 	return {
